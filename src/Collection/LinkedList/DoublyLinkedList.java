@@ -3,6 +3,42 @@ package Collection.LinkedList;
 public class DoublyLinkedList {
 
     Node head;
+    public boolean isEmpty(){
+        return head == null;
+    }
+    public void deleteStart(){
+        if (head == null){
+            return;
+        }
+        head = head.next;
+        head.prev = null;
+
+    }
+    public void deleteEnd(){
+        if(head == null){
+            return;
+        }
+        Node node = head;
+        while(node.next.next != null){
+            node = node.next;
+        }
+        node.next = null;
+    }
+    public void deletePos(int pos){
+        if (head == null){
+            return;
+        }
+        else{
+            Node n = head;
+            Node t = null;
+            for(int i = 1;i<=pos-1;i++){
+                t = n;
+                n = n.next;
+            }
+            t.next = n.next;
+            n.next.prev = t;
+        }
+    }
     public void insertStart(int v){
         Node n = new Node(v);
         n.prev = null;
@@ -40,6 +76,16 @@ public class DoublyLinkedList {
         }
         last.next = n2;
         n2.prev = last;
+    }
+
+    public int countNodes(){
+        int c = 0;
+        Node current = head;
+        while(current.next != null){
+            c++;
+            current = current.next;
+        }
+        return c;
     }
 
     public void printList(Node head){
