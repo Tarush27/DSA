@@ -10,5 +10,13 @@ public class DoublyLinkedListOutput {
         dll.insertStart(3);
         dll.insertStart(4);
         dll.printList(dll.head);
+        dll.deleteStart();
+        System.out.println();
+        dll.deleteEnd();
+        System.out.println();
+        dll.deletePos(2);
+        dll.printList(dll.head);
+        System.out.println();
+        System.out.println("Resultant nodes are : " + dll.countNodes());
     }
 }
