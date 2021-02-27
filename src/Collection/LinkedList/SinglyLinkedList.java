@@ -4,6 +4,7 @@ public class SinglyLinkedList {
 
     Node head;
 
+    int size = 0;
     public void deleteStart(){
         Node n1 = head;
         if (isEmpty()){
@@ -73,6 +74,40 @@ public class SinglyLinkedList {
         while(t != null){
             System.out.print(t.data + " ");
             t = t.next;
+        }
+    }
+    public Node reverseList(Node temp){
+        Node cur = temp;
+        Node prevNode = null, nextNode = null;
+        while(cur != null){
+            nextNode = cur.next;
+            cur.next = prevNode;
+            prevNode = cur;
+            cur = nextNode;
+        }
+        return prevNode;
+    }
+    public void isPalindrome(){
+        Node current = head;
+        boolean flag = true;
+        int mid = (size % 2 == 0) ? (size / 2) : ((size + 1) / 2);
+        for(int i = 0;i<mid;i++){
+            current = current.next;
+        }
+        Node revHead = reverseList(current.next);
+        while(head != null && revHead != null){
+            if(head.data != revHead.data){
+                flag = false;
+                break;
+            }
+        }
+        head = head.next;
+        revHead = revHead.next;
+        if (flag){
+            System.out.println("List is palindrome");
+        }
+        else{
+            System.out.println("List is not a palindrome");
         }
     }
     public static class Node{
