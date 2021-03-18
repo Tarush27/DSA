@@ -8,12 +8,12 @@ public class Prime {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         boolean isPrime = true;
-        if (n > 0){
-            System.out.println("positive");
-        }
-        else{
-            System.out.println("negative");
-        }
+//        if (n > 0){
+//            System.out.println("positive");
+//        }
+//        else{
+//            System.out.println("negative");
+//        }
         for(int i = 2;i*i<=n;i++)
         {
             if(n%i == 0)
