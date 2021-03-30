@@ -26,30 +26,30 @@ public class InfixToPostfix {
 //        for(int i : exp){
 //            char c = (char) exp.length();
 //        }
-        for(int i = 0;i<exp.length();++i){    // this for loop does the whole process and iterates till the length of
-                                              //  expression
+        for(int i = 0;i<exp.length();++i) {    // this for loop does the whole process and iterates till the length of
+            //  expression
             char c = exp.charAt(i);        // checking the index of each character and storing in character type variable
-            if(Character.isLetterOrDigit(c))  // checking if the character is of type letter or not and then adding that
-                                                // character in the result
+            if (Character.isLetterOrDigit(c))  // checking if the character is of type letter or not and then adding that
+                // character in the result
                 res += c;
             else if (c == '(')   // if the exp contains opening parans or not and then pushing into stack if found
                 st.push(c);
-            else if (c == ')'){    // if the exp contains closing brackets then checking whether the stack is empty
-                                    // along with the peek element of the stack should not be "(" and accordingly
-                                    // poping the character and adding into the result.
-                while(!st.isEmpty() && !(st.peek() == '(')){
+            else if (c == ')') {    // if the exp contains closing brackets then checking whether the stack is empty
+                // along with the peek element of the stack should not be "(" and accordingly
+                // poping the character and adding into the result.
+                while (!st.isEmpty() && !(st.peek() == '(')) {
                     res += st.pop();
                 }
                 st.pop(); // popping the remaining elements if the opening brackets are found and underflow condition can occur.
-            }
-            else {
-                while(!st.isEmpty() && Precedence(c) <= Precedence(st.peek())){ // checking the precedence of the
-                                                                        // operators and the popping accordingly
-                                                                        // along with pushing process.
+            } else {
+                while (!st.isEmpty() && Precedence(c) <= Precedence(st.peek())) { // checking the precedence of the
+                    // operators and the popping accordingly
+                    // along with pushing process.
                     res += st.pop();
                 }
                 st.push(c);
             }
+        }
             while(!st.isEmpty()){
                 if (st.peek() == '('){// now for popping all the chars, checking that the peek element
                                         // should be opening bracket until and unless the stack is empty.
@@ -57,7 +57,6 @@ public class InfixToPostfix {
                 }
                 res += st.pop();//again popping the elements
             }
-        }
         return res; // return the string after all the chars have been popped and exp is evaluated.
     }
     public static void main(String[] args){ // main function
