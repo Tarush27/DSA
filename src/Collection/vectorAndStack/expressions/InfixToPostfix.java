@@ -51,8 +51,7 @@ public class InfixToPostfix {
             }
         }
             while(!st.isEmpty()){
-                if (st.peek() == '('){// now for popping all the chars, checking that the peek element
-                                        // should be opening bracket until and unless the stack is empty.
+                if (st.peek() == '('){// condition for returning of invalid expression
                     return "Invalid Expression";
                 }
                 res += st.pop();//again popping the elements
