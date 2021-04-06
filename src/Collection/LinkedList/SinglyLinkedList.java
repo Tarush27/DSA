@@ -137,7 +137,7 @@ public class SinglyLinkedList<E> {
 
     public static class Node<E> {
         E data;
-        Node<E> next;
+        public Node<E> next;
 
         public Node(E data) {
             this.data = data;
