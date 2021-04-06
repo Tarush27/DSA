@@ -16,5 +16,10 @@ public class MainClass {
         q.poll();
         q.element();
         q.peek();
+        MyQueue<Integer> mq = new MyQueue<>();
+        mq.enqueue(10);
+        mq.enqueue(11);
+        mq.enqueue(12);
+        mq.dequeue();
     }
 }
