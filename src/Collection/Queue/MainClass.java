@@ -17,7 +17,9 @@ public class MainClass {
 //        q.element();
 //        q.peek();
         MyQueue<Integer> mq = new MyQueue<>();
-        mq.enqueue(10);
+        mq.enqueue(1);
+        mq.enqueue(2);
+        mq.dequeue();
 //        mq.enqueue(11);
 //        mq.enqueue(12);
 //        mq.dequeue();
