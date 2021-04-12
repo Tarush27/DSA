@@ -14,11 +14,9 @@ public class QueueUsingArray {
         if (rear == capacity) {
             System.out.println("Overflow");
             return;
-        } else {
-            queue[rear] = item;
-            rear++;
         }
-        return;
+        queue[rear] = item;
+        rear++;
     }
 
     static int dequeue() {
