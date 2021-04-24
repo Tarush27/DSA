@@ -1,4 +1,7 @@
 package oops;
+
+import java.util.Scanner;
+
 // Java implementation of O(n^2)
 // time and O(1) space method
 // to find the longest palindromic substring
@@ -75,9 +78,10 @@ public class LongestPalinSubstring {
     public static void main(String[] args)
     {
 
-        String str = "forgeeksskeegfor";
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
         System.out.println("Length is: " + longestPalSubstr(str));
     }
 }
-// This code is contributed by Sumit Ghosh
+
 
