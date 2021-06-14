@@ -16,7 +16,7 @@ public class ArrayLeftShift {
         int n1 = s.nextInt();
 
         for(int i=0;i<n1;i++){
-            int temp,j=0;
+            int temp,j;
             temp = a[0];
             for(j=0;j < a.length-1;j++){
                 a[j] = a[j+1];
